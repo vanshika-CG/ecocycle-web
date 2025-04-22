@@ -1,0 +1,322 @@
+.cyclePage {
+  padding: 2rem 0 4rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.backLink,
+.cycleLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-foreground);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.backLink:hover,
+.cycleLink:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.cycleNavigation {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #00838f, #26c6da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 10px rgba(0, 131, 143, 0.15);
+  letter-spacing: -0.5px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 576px) {
+  .tabs {
+    gap: 0.5rem;
+  }
+}
+
+.tab {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--color-foreground);
+  position: relative;
+  overflow: hidden;
+}
+
+.tab:hover {
+  background-color: rgba(0, 131, 143, 0.1);
+  transform: translateY(-2px);
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #00838f, #26c6da);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 131, 143, 0.3);
+}
+
+@media (max-width: 576px) {
+  .tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+.content {
+  margin-top: 3rem;
+}
+
+/* Overview Tab */
+.overview {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.imageContainer {
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imageContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.cycleImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.description h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #00838f;
+}
+
+.description h3 {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+  color: #00838f;
+}
+
+.description p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.description ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.description li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.factBox {
+  background: linear-gradient(to right, rgba(0, 131, 143, 0.1), rgba(38, 198, 218, 0.05));
+  border-left: 4px solid #00838f;
+  padding: 1.8rem;
+  margin: 2.5rem 0;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 5px 15px rgba(0, 131, 143, 0.1);
+  position: relative;
+}
+
+.factBox::before {
+  content: "!";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 30px;
+  height: 30px;
+  background: #00838f;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.factBox h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #00838f;
+}
+
+.factBox p {
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+/* Journey Tab */
+.journey {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.journey h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: #00838f;
+}
+
+.journeySteps {
+  position: relative;
+}
+
+.journeySteps::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  width: 2px;
+  background-color: rgba(0, 131, 143, 0.3);
+}
+
+@media (max-width: 576px) {
+  .journeySteps::before {
+    left: 25px;
+  }
+}
+
+.journeyStep {
+  display: flex;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.journeyIcon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00838f, #26c6da);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-right: 2rem;
+  flex-shrink: 0;
+  z-index: 1;
+  box-shadow: 0 8px 20px rgba(0, 131, 143, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.journeyStep:hover .journeyIcon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+@media (max-width: 576px) {
+  .journeyIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+.journeyContent h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: #00838f;
+}
+
+.journeyContent p {
+  line-height: 1.7;
+}
+
+.journeyNote {
+  background-color: rgba(0, 131, 143, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.journeyNote p {
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Quiz Section */
+.quizSection {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Diagram Info */
+.diagramInfo {
+  max-width: 800px;
+  margin: 2.5rem auto 0;
+  padding: 2rem;
+  background: linear-gradient(to bottom right, rgba(0, 131, 143, 0.08), rgba(0, 131, 143, 0.02));
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 131, 143, 0.1);
+}
+
+.diagramInfo h3 {
+  color: #00838f;
+  margin-bottom: 1rem;
+}
+
+.diagramInfo p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.diagramInfo p:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,162 @@
+.cycleDiagramContainer {
+  margin: 3rem 0;
+  width: 100%;
+}
+
+.diagramTitle {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.diagramTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: currentColor;
+  border-radius: 3px;
+}
+
+.diagram {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.diagram:hover {
+  transform: scale(1.01);
+}
+
+.connections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.path {
+  transition: stroke 0.4s ease, stroke-width 0.4s ease, stroke-dasharray 0.4s ease;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+}
+
+.stage {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 2;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .stage {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stage {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+.stage:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stage.active {
+  z-index: 3;
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stageName {
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 0 10px;
+}
+
+@media (max-width: 576px) {
+  .stageName {
+    font-size: 0.9rem;
+  }
+}
+
+.stageInfo {
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  background-color: var(--color-background);
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.stageInfo p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.stageInfo::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--color-background);
+  filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.05));
+}
+
+@media (max-width: 768px) {
+  .stageInfo {
+    width: 240px;
+  }
+}
+
+.instructions {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+  opacity: 0.7;
+  font-style: italic;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,114 @@
+.cycleDiagramContainer {
+  margin: 3rem 0;
+  width: 100%;
+}
+
+.diagramTitle {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.diagram {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.connections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.path {
+  transition: stroke 0.3s ease, stroke-width 0.3s ease, stroke-dasharray 0.3s ease;
+}
+
+.stage {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: all 0.3s ease;
+  z-index: 2;
+  
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+  }
+  
+  @media (max-width: 576px) {
+    width: 80px;
+    height: 80px;
+  }
+  
+  &.active {
+    z-index: 3;
+  }
+}
+
+.stageName {
+  font-weight: 600;
+  text-align: center;
+  font-size: 1rem;
+  
+  @media (max-width: 576px) {
+    font-size: 0.9rem;
+  }
+}
+
+.stageInfo {
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  background-color: var(--color-background);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  
+  p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid var(--color-background);
+  }
+  
+  @media (max-width: 768px) {
+    width: 200px;
+  }
+}
+
+.instructions {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  font-style: italic;
+}
